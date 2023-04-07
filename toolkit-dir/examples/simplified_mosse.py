@@ -6,11 +6,23 @@ from numpy.fft import fft2, ifft2
 from utils.tracker import Tracker
 
 class CorelationParams():
-    def __init__(self, enlarge_factor=1.25, sigma = 4, lmbd = 1, alfa = 0.1):
+    def __init__(self, enlarge_factor=1.20, sigma = 4, lmbd = 1, alfa = 0.1):
         self.enlarge_factor = enlarge_factor
         self.sigma = sigma
         self.lmbd = lmbd
         self.alpha = alfa
+
+        self.search_window = None
+        self.G = None
+        self.F = None
+        self.patch_size = None
+        
+        self.template = None
+        self.position = None
+        self.size = None
+        self.cosine_window = None
+        
+        self.F_conj = None
 
 class CorrelationTracker(Tracker):
     def __init__(self):
@@ -18,7 +30,7 @@ class CorrelationTracker(Tracker):
         super().__init__()
         
     def name(self):
-        return 'simplified_mosse'
+        return 'simplified_mosse_alpha_none'
         
     def initialize(self, img, region: list):
         if len(region) == 8:
@@ -27,10 +39,10 @@ class CorrelationTracker(Tracker):
             region = [np.min(x_), np.min(y_), np.max(x_) - np.min(x_) + 1, np.max(y_) - np.min(y_) + 1]
         
         # Locate patch and location of searched area
-        self.window = max(region[2], region[3]) * self.params.enlarge_factor
         self.position = (region[0] + region[2] / 2, region[1] + region[3] / 2)
         
         # Define search region around image with some enlarged factor
+        self.window = max(region[2], region[3]) * self.params.enlarge_factor
         self.size= (region[2], region[3])
         
         # Construct gaussian function
@@ -75,11 +87,11 @@ class CorrelationTracker(Tracker):
         
         # Update filter
         patch_new, _ = get_patch(img, self.position, self.shape)
-        patch_new = fft2(np.multiply(patch_new, self.cosine_window))
-        patch_new_conj = np.conjugate(patch_new)
+        F_new = fft2(np.multiply(patch_new, self.cosine_window))
+        F_new_conj = np.conjugate(F_new)
         new_filter = np.divide(
-            np.multiply(self.G, patch_new_conj),
-            np.add(self.params.lmbd, np.multiply(patch_new,patch_new_conj))
+            np.multiply(self.G, F_new_conj),
+            np.add(self.params.lmbd, np.multiply(F_new,F_new_conj))
         )
         
         self.H_conj = (1 - self.params.alpha) * self.H_conj + self.params.alpha * new_filter
