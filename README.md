@@ -1,6 +1,6 @@
-## Kalman Filter & Correlation Filter Tracker
+Correlation Filter Tracker
 
-Simple implementation of Kalman Filter and Correlation Filter for object tracking task. 
+Simple implementation of Correlation Filter for object tracking task. 
 
 Data was obtained via official VOT2013 [challenge](https://www.votchallenge.net/vot2013/).
 
