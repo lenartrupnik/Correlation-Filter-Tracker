@@ -1,0 +1,121 @@
+{
+  "tracker_name": "simplified_mosse_alpha_none",
+  "results": [
+    {
+      "sequence_name": "bicycle",
+      "sequence_length": 271,
+      "overlap": 0.3493020493280255,
+      "failures": 3,
+      "speed": 964.0452081369881
+    },
+    {
+      "sequence_name": "bolt",
+      "sequence_length": 350,
+      "overlap": 0.40014940915135894,
+      "failures": 7,
+      "speed": 374.9037562678492
+    },
+    {
+      "sequence_name": "car",
+      "sequence_length": 374,
+      "overlap": 0.2891201100583133,
+      "failures": 1,
+      "speed": 820.0754469411185
+    },
+    {
+      "sequence_name": "cup",
+      "sequence_length": 303,
+      "overlap": 0.3260248104981792,
+      "failures": 7,
+      "speed": 862.5153645350621
+    },
+    {
+      "sequence_name": "david",
+      "sequence_length": 770,
+      "overlap": 0.19755837192951442,
+      "failures": 0,
+      "speed": 481.94412001885723
+    },
+    {
+      "sequence_name": "diving",
+      "sequence_length": 231,
+      "overlap": 0.3227467196630645,
+      "failures": 3,
+      "speed": 949.7116822776428
+    },
+    {
+      "sequence_name": "face",
+      "sequence_length": 415,
+      "overlap": 0.6917111895542317,
+      "failures": 1,
+      "speed": 503.6885072621224
+    },
+    {
+      "sequence_name": "gymnastics",
+      "sequence_length": 207,
+      "overlap": 0.27189990056948055,
+      "failures": 16,
+      "speed": 339.7814991112217
+    },
+    {
+      "sequence_name": "hand",
+      "sequence_length": 244,
+      "overlap": 0.3257877606600918,
+      "failures": 15,
+      "speed": 930.8711790647073
+    },
+    {
+      "sequence_name": "iceskater",
+      "sequence_length": 500,
+      "overlap": 0.3065188173003435,
+      "failures": 1,
+      "speed": 112.83453477468231
+    },
+    {
+      "sequence_name": "juice",
+      "sequence_length": 404,
+      "overlap": 0.09997996465893627,
+      "failures": 1,
+      "speed": 941.489709752845
+    },
+    {
+      "sequence_name": "jump",
+      "sequence_length": 228,
+      "overlap": 0.21379928724301292,
+      "failures": 0,
+      "speed": 1697.8181547397417
+    },
+    {
+      "sequence_name": "singer",
+      "sequence_length": 351,
+      "overlap": 0.2867833651835958,
+      "failures": 0,
+      "speed": 60.75601040516775
+    },
+    {
+      "sequence_name": "sunshade",
+      "sequence_length": 172,
+      "overlap": 0.5621658568811725,
+      "failures": 3,
+      "speed": 903.3632779439907
+    },
+    {
+      "sequence_name": "torus",
+      "sequence_length": 264,
+      "overlap": 0.3581143181888963,
+      "failures": 8,
+      "speed": 941.8500940023232
+    },
+    {
+      "sequence_name": "woman",
+      "sequence_length": 597,
+      "overlap": 0.4627219351942801,
+      "failures": 1,
+      "speed": 207.00372131951227
+    }
+  ],
+  "average_overlap": 0.34152399162890607,
+  "total_failures": 67,
+  "average_speed": 693.2907666596146,
+  "total_frames": 5681
+}
